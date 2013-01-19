@@ -11,11 +11,16 @@ const (
 	server_ip="127.0.0.1"
 	server_port=19781
 )
-
+/*
+  入口主函数
+*/
 func main() {
 	server()
 }
-
+/*
+ MDS-SERVER原理是自架一台服务器，程序模拟MDS服务的简单回应。客户端使用黑莓断续膏软件
+ 保持模拟在线。
+*/
 func server() {
 	exit:=make(chan bool)
 	ip:=net.ParseIP(server_ip)
